@@ -1,0 +1,40 @@
+<app-top-header></app-top-header>
+<!-- <app-search-bar></app-search-bar> -->
+<section class="gallery">
+    <div class="d-block w-100">
+    <span class="line-style"></span>
+    <small class="sub-title">GCG Insights</small>
+    </div>
+    <div class="gallery-item" *ngFor="let event of eventList">
+        <div>
+            <a href="http://127.0.0.1:8887/uploads/events/{{event.eventId}}/event.jpg">
+                <img src="http://127.0.0.1:8887/uploads/events/{{event.eventId}}/event.jpg" alt="{{event.eventName}}">
+                
+            </a>
+            <div class="overlay">{{event.eventName}}</div>
+        </div>
+
+    </div>
+    <!-- <div class="gallery-item">
+        <a href="../../assets/images/2.jpeg">
+            <img src="../../assets/images/2.jpeg" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="../../assets/images/3.jpeg">
+            <img src="../../assets/images/3.jpeg" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="../../assets/images/4.jpeg">
+            <img src="../../assets/images/4.jpeg" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="../../assets/images/5.jpeg">
+            <img src="../../assets/images/5.jpeg" alt="">
+        </a>
+    </div> -->
+    
+</section>
+<app-footer></app-footer>

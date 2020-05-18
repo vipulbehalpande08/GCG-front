@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~animate.css/animate.min';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @import '~swiper/dist/css/swiper.min.css';
+*{
+margin: 0px;
+padding: 0px;
+border: none;
+outline: none;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+html{
+	height: 100vh;
+}
+body{
+	min-height: 100vh;
+    font-size:14px;
+	color:#666666;
+	line-height:1.7em;
+	font-weight:400;
+	background:#ffffff;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	
+}
+.line-style{
+    z-index: 1;
+	// top: -15px;
+	// margin-bottom: 15px;
+	// top: -30px;
+	// left: 0px;
+	// margin-bottom: 15px;
+    width: 70px;
+    height: 3px;
+    position: absolute;
+    background-color: #ffbe30;
+}
+.sub-title{
+	margin-top: 15px;
+	margin-bottom: 15px;
+    letter-spacing: 5px;
+    color: #878787;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+li{
+	margin: 0;
+    padding: 0;
+	// float: left;
+    list-style: none;
+    display: inline-block;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

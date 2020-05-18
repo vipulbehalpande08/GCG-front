@@ -1,0 +1,60 @@
+<div class="exhibition-item col-sm-12">  
+    <div class="event-item">
+        <div class="event-image">
+            <div class="post-date">
+                <span class="date">{{event.startDate | date :'d'}}</span>
+                <small class="month">{{event.startDate | date :'MMM'}}</small>
+            </div>
+            <img src="../../../assets/images/2.jpeg" alt="" class="card-img-top">
+        </div>  
+        <div class="">
+            <div class="event-content">
+                <div class="event-title">
+                    <h3 class="event-title">
+                        <strong>{{event.eventName}}</strong> 
+                        <!-- {{eventName}} -->
+                        <span class="event-date">{{event.startDate | date : 'EEEE, MMM d, y'}} - {{event.endDate | date : 'EEEE, MMM d, y'}}</span>
+                        <!-- {{startDate - endDate}} -->
+                    </h3>
+                </div>
+                    <p class="event-description">
+                      <!-- {{description}} -->
+                        {{event.description}}
+                    </p>
+                <div class="event-info clearfix col-sm-12 col-md-12" style="z-index:9">
+                    <ul class="col-sm-12 col-md-12">
+                        <li class="col-sm-12 col-md-4">
+                            <span class="icon">
+                                <!-- <fa name="user"></fa> -->
+                                <fa-icon [icon]='faPalette'></fa-icon>
+                            </span>
+                            <div class="info-content">
+                                <small>Artist</small>
+                                <h3>{{artistName}}</h3>
+                                <!-- artistName -->
+                            </div>
+                        </li>
+                        <li class="col-sm-12 col-md-4">
+                            <span class="icon">
+                                <fa-icon [icon]='faMapMarkedAlt'></fa-icon>
+                                <!-- <fa name="map-marker"></fa> -->
+                            </span>
+                            <div class="info-content">
+                                <small>Venue</small>
+                                <h3>{{venue}}</h3>
+                                <!-- venueName -->
+                            </div>
+                        </li>
+                        <li class="event-details-btn col-sm-12 col-md-4" >
+                            <a routerLink="../event-details" routerLinkActive="../event-details" class="">
+                                Details
+                            </a>
+                        </li>
+                    </ul>
+                </div>    
+            </div>
+            
+        </div>
+    </div>
+</div>
+

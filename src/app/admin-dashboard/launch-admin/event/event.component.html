@@ -1,0 +1,225 @@
+<div class="content-wrapper container-fluid w-100" style="padding:0px;height: 100%;">
+   <div class="header">
+        Event Manager
+    </div>
+    <button type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#addEventModal">
+        Add
+      </button>
+    <table class="table table-striped" style="margin-top: 10px;">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Description</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let event of eventList" >
+            <td scope="row">{{event.eventId}}</td>
+            <td>{{event.eventName }}</td>
+            <td>{{event.startDate | date :'mediumDate'}}</td>
+            <td>{{event.endDate | date: 'mediumDate'}}</td>
+            <td style="text-align: justify;">{{event.description | slice:0:150}}...</td>
+            <td (click)='showContent(event)' data-toggle="modal" data-target="#editEventModal">
+              <i class="fa fa-edit btn btn-primary"> </i>
+            </td>
+            <td (click)='deleteEvent(event.eventId)' ><i class="fa fa-trash btn btn-danger"> </i></td>
+        </tr>
+        </tbody>
+      </table>
+      <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="addEventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eventModalLabel">Add Event</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="addEventForm" (submit)='addEvent($event)'>
+              <div class="form-group col input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Event Name</div>
+                </div>
+                    <!-- <label for="eventName" class="">Event Name :</label> -->
+                  <input type="text" id="eventName" formControlName="eventName" class="form-control"/>
+              </div>
+              <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Start Date</div>
+                    </div>
+                    <!-- <label for="startDate">Start Date:</label> --> 
+                    <input type="date" id="startDate" min="2001-01-01" max="2099-12-31" formControlName="startDate" class="form-control"/>
+              </div>
+              <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">End Date</div>
+                    </div>
+                <!-- <label for="endDate">End Date:</label> -->
+                    <input type="date" id="endDate" min="2001-01-01" max="2099-12-31" formControlName="endDate" class="form-control"/>
+              </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Category </div>
+                    </div>
+                    <select class="form-group custom-select" formControlName="categoryId" >
+                      <option *ngFor="let cat of categoryList" value="{{cat.categoryId}}">
+                        {{cat.categoryName}}
+                      </option>
+                    </select>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Location </div>
+                    </div>
+                    <select class="form-group custom-select" formControlName="venueId">
+                      
+                      <option *ngFor="let venue of venueList" value="{{venue.venueId}}">{{venue.venueName}},&ensp;{{venue.street}},&ensp;{{venue.city}}</option>  
+                      <!-- <option value="1">Galway</option>
+                        <option value="2">Dublin</option>
+                        <option value="3">Cork</option> -->
+                    </select>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Artists </div>
+                    </div>
+                    <select class="form-group custom-select" formControlName="artistIds" >
+                      <option >Please select an artist</option>  
+                      <option *ngFor="let artist of artistList" value="{{artist.userId}}">
+                          {{artist.firstName}}&ensp;{{artist.lastName}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group col">
+                    <!-- <div class="input-group-prepend">
+                        <div class="input-group-text">Upload Image(s)</div>
+                    </div> -->
+                    <label for="uploadImage"> Upload Image(s) :</label>
+                    <input formControlName="uploadImages" type="file" id="uploadImage" (change)="onUploadFile($event)"/>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Description </div>
+                    </div>
+                    <textarea class="form-control" id="eventDescription" formControlName="eventDescription" required></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)='clear()'>Close</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="!addEventForm.valid">Save changes</button>
+                  </div>
+            </form>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+<!-- long modal -->
+
+<!-- edit event modal -->
+<div class="modal fade" id="editEventModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel">Edit Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editEventForm" (submit)='editEvent($event)'>
+            <div class="form-group col input-group">
+              <div class="input-group-prepend">
+                  <div class="input-group-text">Event Name</div>
+              </div>
+                  <!-- <label for="eventName" class="">Event Name :</label> -->
+                <input type="text" id="eventName" formControlName="eventName" class="form-control"/>
+            </div>
+            <div class="form-group col input-group">
+                  <div class="input-group-prepend">
+                      <div class="input-group-text">Start Date</div>
+                  </div>
+                  <!-- <label for="startDate">Start Date:</label> --> 
+                  <input type="date" id="startDate" min="2001-01-01T00:00:00" max="2099-12-31T00:00:0" formControlName="startDate" class="form-control"/>
+            </div>
+            <div class="form-group col input-group">
+                  <div class="input-group-prepend">
+                      <div class="input-group-text">End Date</div>
+                  </div>
+              <!-- <label for="endDate">End Date:</label> -->
+                  <input type="date" id="endDate" value="2001-01-01T00:00:00" min="2001-01-01 00:00:00" max="2099-12-31 00:00:00" formControlName="endDate" class="form-control"/>
+            </div>
+              <div class="form-group col input-group">
+                  <div class="input-group-prepend">
+                      <div class="input-group-text">Category </div>
+                  </div>
+                  <select class="form-group custom-select" id="categoryId" formControlName="categoryId" [(ngModel)]="selectedCategory">
+                    <option *ngFor="let cat of categoryList" value="{{cat.categoryId}}">
+                      {{cat.categoryName}}
+                    </option>
+                  </select>
+              </div>
+              <div class="form-group col input-group">
+                  <div class="input-group-prepend">
+                      <div class="input-group-text">Location </div>
+                  </div>
+                  <select [(ngModel)]="selectedLocation" id="venueId" class="form-group custom-select" formControlName="venueId">
+                      <option *ngFor="let venue of venueList" value="{{venue.venueId}}">{{venue.venueName}} - {{venue.street}},&ensp;{{venue.city}} </option>
+                      <!-- <option value="2">Dublin</option>
+                      <option value="3">Cork</option> -->
+                  </select>
+              </div>
+              <div class="form-group col input-group">
+                  <div class="input-group-prepend">
+                      <div class="input-group-text">Artists </div>
+                  </div>
+                  <select [(ngModel)]="selectedArtist" id="artistIds" class="form-group custom-select" formControlName="artistIds" >
+                      <option>Please select artist</option>
+                      <option *ngFor="let artist of artistList" value="{{artist.userId}}" >
+                        {{artist.firstName}}&ensp;{{artist.lastName}}
+                      </option>
+                      
+                  </select>
+              </div>
+              <!-- <div class="form-group col">
+                  <div class="input-group-prepend">
+                      <div class="input-group-text">Upload Image(s)</div>
+                  </div>
+                  <label for="uploadImage"> Upload Image(s) :</label>
+                  <input formControlName="uploadImages" type="file" id="uploadImage" multiple/>
+              </div> -->
+              <div class="form-group col input-group">
+                  <div class="input-group-prepend">
+                      <div class="input-group-text">Description </div>
+                  </div>
+                  <textarea class="form-control" id="eventDescription" formControlName="eventDescription" required></textarea>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)='clear()'>Close</button>
+                  <button type="submit" class="btn btn-primary" [disabled]='!editEventForm.valid'>Save changes</button>
+                </div>
+          </form>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<!-- end edit modal -->
+</div>

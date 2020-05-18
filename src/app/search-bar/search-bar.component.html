@@ -1,0 +1,95 @@
+<section class="container-fluid w-100" style="padding:50px 0px 0px 0px">
+  <div class="col-sm-12 p-0">
+    <div class="row m-0">
+      <div class="card w-100">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+           <div id="accordion">
+            <form > 
+              <div class="input-group p-3 mb-3 col">
+                <input type="search" class="form-control search" placeholder="Search event..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append mr-2">
+                  <span class="p-0">
+                     <button type="submit" class="btn btn-secondary"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+                <button class="btn btn-secondary pull-right d-inline-block" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Advanced Search
+                </button>
+              </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <mat-form-field class="col-sm-3">
+                    <input matInput [matDatepicker]="startpicker" placeholder="Choose a start date" formControlName="startDate">
+                    <mat-datepicker-toggle matSuffix [for]="startpicker"></mat-datepicker-toggle>
+                    <mat-datepicker #startpicker></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field class="col-sm-3">
+                    <input matInput [matDatepicker]="endpicker" placeholder="Choose a end date" formControlName="endDate">
+                    <mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>
+                    <mat-datepicker #endpicker></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <!-- <mat-label>Select an option</mat-label> -->
+                    <select [(value)]="selected" formControlName="category">
+                      <option>None</option>
+                      <option value="option1">Option 1</option>
+                      <option value="option2">Option 2</option>
+                      <option value="option3">Option 3</option>
+                    </select>
+                  </mat-form-field>
+                  <button type="submit" class="btn btn-secondary"> Search</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- event search section -->
+<!-- <section id="event-search clear" class="event-search" style="padding-top: 100px;padding-bottom: 30px;"> 
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-12">
+          <div class="event-search-title">
+            <small class="sub-title">Find best event on GCG</small>
+            <h2 class="big-title">Event <strong>Search</strong></h2>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-12 col-sm-12">
+          <div class="search-form form-wrapper">
+            <form action="">
+              <ul style="list-style: none;" class="col-sm-12">
+                <li class="col-sm-12 col-md-4">
+                  <span class="title">event keyword</span>
+                  <div class="form-item">
+                    <input type="search" placeholder="Event, name, location,etc">
+                  </div>
+                </li>
+                <li class="col-sm-12 col-md-4">
+                  <span class="title"> event category</span>
+                  <div class="form-item">
+                    <select class="event-category-dropdown">
+                   
+                      <option value="" selected>Photography</option>
+                      <option value="1">Sculpture</option>
+                      <option value="2">Painting</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="col-sm-12 col-md-4">
+                  <button type="submit" class="submit-btn">seach event now</button>
+                </li>
+              </ul>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </section>
+   -->

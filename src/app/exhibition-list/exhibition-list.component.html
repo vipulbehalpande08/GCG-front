@@ -1,0 +1,49 @@
+<app-top-header></app-top-header>
+<!-- <app-search-bar class="position-relative" ></app-search-bar> -->
+<!-- search bar start-->
+ <section class="container-fluid w-100" style="padding:50px 0px 0px 0px">
+    <div class="col-sm-12 p-0">
+        <div class="row m-0">
+            <div class="card w-100">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <form [formGroup]="searchForm" (submit)='searchEvent()' style="font-size: 14px;">
+                        <mat-form-field class="col-sm-3">
+                            <mat-label>Event Name</mat-label>
+                            <input matInput placeholder="Please search event" formControlName="searchEvent">
+                          </mat-form-field>
+                        <mat-form-field class="col-sm-3">
+                            <input matInput [matDatepicker]="startpicker" placeholder="Choose start date" formControlName="startDate">
+                            <mat-datepicker-toggle matSuffix [for]="startpicker"></mat-datepicker-toggle>
+                            <mat-datepicker #startpicker></mat-datepicker>
+                          </mat-form-field>
+                          <mat-form-field class="col-sm-3">
+                            <input matInput [matDatepicker]="endpicker" placeholder="Choose end date" formControlName="endDate">
+                            <mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>
+                            <mat-datepicker #endpicker></mat-datepicker>
+                          </mat-form-field>
+                        <mat-form-field class="col-sm-3">
+                            <!-- <mat-label>Category</mat-label> -->
+                            <select matNativeControl placeholder="Default Sorting" formControlName="sortingId">
+                            <option value="1">Sort by event name</option>
+                              <option value="2">Sort by date</option>
+                              <option value="3">Sort by location</option>
+                              <!-- <option value="audi">Audi</option> -->
+                            </select>
+                        </mat-form-field>
+                        <button type="submit" class="btn btn-secondary pull-right"> Search</button>
+                    </form>
+                  </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ </section>   
+<!-- search bar end -->
+
+
+
+
+
+<app-exhibition *ngFor='let event of events' [event]="event"></app-exhibition>

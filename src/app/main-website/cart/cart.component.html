@@ -1,0 +1,131 @@
+<app-top-header></app-top-header>
+<div class="container-fluid p-0" style="margin-top: 50px;">
+    <div class="col-sm-12">
+      <div class="row" style=" height:100vh;">
+        <div class="col-sm-9" style="background:#fff">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="row mt-3 mb-3 border-bottom">
+                <div class="col-sm-10">
+                  <h1 class="m-0">Shopping Cart</h1>
+                </div>
+                <!-- <div class="col-sm-2">
+                  <span>Price</span>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- <div class="col-sm-12" *ngFor="let dummy of ' '.repeat(3).split(''), let x = index"> -->
+            <div class="col-sm-12" *ngFor="let product of orderItems"> 
+                <div class="row border-bottom mb-3">
+                <div class="col-sm-2">
+                  <div class="product-img">
+                    <img height="150" width="150" src="http://127.0.0.1:8887/uploads/products/{{product.productId}}/product.jpg" class="img-responsive rounded-circle" alt="Berry Lace Dress">
+                  </div>
+                  <div class="product-name">
+                    <h2><a >{{product.productName}}</a></h2>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="product-desc">{{product.description}}</div>
+                  <div *ngFor="let artist of artists">
+                    <div *ngIf="artist.userId == product.ownerId">
+                        <span class="font-weight-bold">By - </span>
+                        <span class="product-owner">{{artist.firstName}}&nbsp; {{artist.lastName}}</span>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-2">
+                  <div class="mb-1">
+                    <span>Qty: </span>
+                    <select class="product-qty">
+                      <option value="1">1</option>
+                      <!-- <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option> -->
+                    </select>
+                  </div>
+                  <div class="product-amt mb-4 ml-1"><h3>${{product.price}}</h3></div>
+                  <button (click)="removeItem(product)" class="btn btn-primary">Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-10">
+              <div class="float-right">
+                <span class="p-0 lbl-subtotal">Subtotal ({{orderItems.length}} item(s)): </span>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="subtotal">
+                <span class="product-subtotal">${{totalPrice.toString()| slice:0:5  }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3" style="background:#eee">
+          <div class="p-3">
+            <div class="mb-2">
+              <span class="p-0">Subtotal ({{orderItems.length}} item): </span>
+              <span class="cart-total">${{totalPrice.toString() |slice:0:5}}</span>
+            </div>
+            <div class="buy mb-2">
+              <button type="button" (click)="proceedToBuy()" class="btn btn-secondary btn-block btn-sm">Proceed to Buy</button>
+            </div>
+
+            <div class="shipping-details mt-3" id="shipping" [ngClass]="{'d-none': checkout}">
+              <div class="shipping-header">
+                <h3>SHIPPING</h3>
+              </div>
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label for="first-name">First Name: </label>
+                  <input id="first-name" type="text" class=" form-control form-control-sm" placeholder="first name">
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name: </label>
+                  <input id="last-name" type="text" class="form-control form-control-sm" placeholder="last name">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone: </label>
+                  <input id="phone" type="text" class="form-control form-control-sm" placeholder="phone">
+                </div>
+                <div class="form-group">
+                  <label for="postal-code">Postal code: </label>
+                  <input id="postal-code" type="text" class="form-control form-control-sm" placeholder="postal code">
+                </div>
+                <div class="form-group">
+                  <label for="address-1">Address line 1: </label>
+                  <input id="address-1" type="text" class="form-control form-control-sm" placeholder="address line 1">
+                </div>
+                <div class="form-group">
+                  <label for="address-2">Address line 2: </label>
+                  <input id="address-2" type="text" class="form-control form-control-sm" placeholder="address line 2">
+                </div>
+                <div class="form-group">
+                  <label for="city">City: </label>
+                  <input id="city" type="text" class="form-control form-control-sm" placeholder="city">
+                </div>
+                <div class="form-group">
+                  <label for="state">State: </label>
+                  <input id="state" type="text" class="form-control form-control-sm" placeholder="state">
+                </div>
+                <div class="submit-billing">
+                  <button type="submit" class="btn btn-secondary btn-block btn-sm">Continue to billing</button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+.container-fluid{
+    margin:0;
+    padding:0;
+}
+
+app-top-header{
+  width: auto;
+}
+router-outlet{
+  margin-top:60px;
+}
+// .centered{
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   font-size: 40px;
+//   font-weight: bold;
+//   color: white;
+// }

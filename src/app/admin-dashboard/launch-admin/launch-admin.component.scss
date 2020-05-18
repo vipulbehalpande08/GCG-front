@@ -1,0 +1,37 @@
+@import "bootstrap";
+.container{
+    padding:0px;
+}
+.header{
+    background: #fff;
+    padding: 20px;
+    color: #717171;
+    border-bottom: 1px solid #e0e4e8;
+  }
+  th{
+    text-align: center;  
+    background: darkcyan;
+  }
+  $mynewcolor: darkcyan;
+  .btn-primary{
+    //   background: darkcyan;
+    //   border-color: darkcyan;
+      @include button-variant($mynewcolor, darken($mynewcolor, 7.5%), darken($mynewcolor, 10%), lighten($mynewcolor,5%), lighten($mynewcolor, 10%), darken($mynewcolor,20%));
+
+  }
+  .btn-primary:hover{
+    //   background: cadetblue;
+    // background: darkcyan;
+  }
+  .btn:focus{
+    //   background:darkcyan
+  }
+  td{
+      text-align: center;
+  }
+  table tr:hover *{
+    //   background: whitesmoke;
+  }
+  content-wrapper{
+      margin-left: -60px;
+  }

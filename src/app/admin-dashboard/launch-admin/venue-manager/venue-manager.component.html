@@ -1,0 +1,228 @@
+<div class="container-fluid w-100">
+    <div class="header">Venue Manager</div>
+    <button type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#venueModal">
+        Add
+    </button>
+      
+      <!-- table content start -->
+      <table class="table table-striped" style="margin-top: 10px;">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let venue of venueList" >
+            <td scope="row">{{venue.venueId}}</td>
+            <td>{{venue.venueName }}</td>
+            <td>{{venue.street}}, {{venue.city}}, {{venue.country}}</td>
+            <td><i class="fa fa-upload btn btn-light" data-toggle="modal" data-target="#uploadImageModal"
+               (click)="getVenueId(venue.venueId)"></i></td>
+            <td><i class="fa fa-edit btn btn-primary" (click)="onUpdateClicked(venue)" data-toggle="modal" data-target="#editVenueModal"></i></td>
+            <td (click)='deleteVenue(venue.venueId)'><i class="fa fa-trash btn btn-danger"> </i></td>
+        </tr>
+        </tbody>
+      </table>
+      <!-- table content end -->
+      <!-- modal -->
+      <div class="modal fade" id="venueModal" tabindex="-1" role="dialog" aria-labelledby="venueModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="venueModalLabel">New Venue</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="addVenueForm" (submit)="addVenue()">
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Venue Name</div>
+                    </div>
+                        <!-- <label for="eventName" class="">Event Name :</label> -->
+                      <input type="text" id="venueName" formControlName="venueName" class="form-control"/>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">From Date</div>
+                    </div>
+                    <!-- <label for="startDate">Start Date:</label> --> 
+                    <input type="date" id="fromDate" min="2001-01-01" max="2099-12-31" formControlName="fromDate" class="form-control"/>
+                </div>
+                <div class="form-group col input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">To Date</div>
+                        </div>
+                    <!-- <label for="endDate">End Date:</label> -->
+                        <input type="date" id="toDate" min="2001-01-01" max="2099-12-31" formControlName="toDate" class="form-control"/>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Description </div>
+                    </div>
+                    <textarea class="form-control" id="venueDescription" formControlName="venueDescription" required></textarea>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Street</div>
+                    </div>
+                    <input type="text" class="form-control" id="street" formControlName="street" required/>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Area</div>
+                    </div>
+                    <input type="text" class="form-control" id="area" formControlName="area" required/>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">City</div>
+                    </div>
+                    <input type="text" class="form-control" id="city" formControlName="city" required/>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Region</div>
+                    </div>
+                    <input type="text" class="form-control" id="region" formControlName="region" required/>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Country</div>
+                    </div>
+                    <input type="text" class="form-control" id="country" formControlName="country" required/>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Pin</div>
+                    </div>
+                    <input type="text" class="form-control" id="pin" formControlName="pin" required/>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Phone</div>
+                    </div>
+                    <input type="tel" maxlength="10" class="form-control" id="phone" formControlName="phone" required/>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Email</div>
+                    </div>
+                    <input type="text" class="form-control" id="email" formControlName="email" required/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="editVenueModal" tabindex="-1" role="dialog" aria-labelledby="venueModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="venueModalLabel">Edit Venue</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="editVenueForm" (submit)="updateVenue()">
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Venue Name</div>
+                    </div>
+                        <!-- <label for="eventName" class="">Event Name :</label> -->
+                      <input type="text" id="venueName" formControlName="venueName" class="form-control"/>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">From Date</div>
+                    </div>
+                    <!-- <label for="startDate">Start Date:</label> --> 
+                    <input type="date" id="fromDate" min="2001-01-01" max="2099-12-31" formControlName="fromDate" class="form-control"/>
+                </div>
+                <div class="form-group col input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">To Date</div>
+                        </div>
+                    <!-- <label for="endDate">End Date:</label> -->
+                        <input type="date" id="toDate" min="2001-01-01" max="2099-12-31" formControlName="toDate" class="form-control"/>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Description </div>
+                    </div>
+                    <textarea class="form-control" id="venueDescription" formControlName="venueDescription" required></textarea>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Street</div>
+                    </div>
+                    <input type="text" class="form-control" id="street" formControlName="street" required/>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Area</div>
+                    </div>
+                    <input type="text" class="form-control" id="area" formControlName="area" required/>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">City</div>
+                    </div>
+                    <input type="text" class="form-control" id="city" formControlName="city" required/>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Region</div>
+                    </div>
+                    <input type="text" class="form-control" id="region" formControlName="region" required/>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Country</div>
+                    </div>
+                    <input type="text" class="form-control" id="country" formControlName="country" required/>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Pin</div>
+                    </div>
+                    <input type="text" class="form-control" id="pin" formControlName="pin" required/>
+                </div>
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Phone</div>
+                    </div>
+                    <input type="tel" class="form-control" minlength="10" maxlength="10" id="phone" formControlName="phone" required/>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Email</div>
+                    </div>
+                    <input type="text" class="form-control" id="email" formControlName="email" required/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="uploadImageModal" tabindex="-1" role="dialog" aria-labelledby="uploadImageModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <form [formGroup]="uploadImageForm" (submit)="uploadImage()">
+              <div class="modal-header">
+                <h5 class="modal-title" id="uploadImageModalLabel">Upload Image(s)</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <input type="file" id="uploadFile" (change)="onFileSelected($event)"/>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">Close</button>
+                <button type="submit" class="btn btn-primary">Upload</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+</div>

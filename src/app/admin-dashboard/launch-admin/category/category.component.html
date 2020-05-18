@@ -1,0 +1,112 @@
+<div class="container-fluid w-100">
+    <div class="header">
+        Category Manager
+    </div>
+    <button type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#categoryModal">
+        Add
+      </button>
+    <!-- <button type="button" data-toggle="model" data-target="#exampleModal" class=".btn-icon-split .text-white-50 btn btn-primary m-1"> Add </button> -->
+    <table class="table table-striped" style="margin-top: 10px;">
+        <thead>
+          <tr class="w-100">
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Parent Category</th>
+            <!-- <th scope="col">End Date</th> -->
+            <!-- <th scope="col">Description</th> -->
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let category of categoryList">
+            <td scope="row">{{category.categoryId}}</td>
+            <td>{{category.categoryName}}</td>
+            <!-- <td></td> -->
+            <div *ngFor="let subCat of categoryList" class="w-100" style="text-align: -webkit-center;">
+              <td class="w-100" *ngIf="category.parentCategoryId == subCat.categoryId;">{{subCat.categoryName}}</td>
+            </div>
+            <td (click)="onEditClicked(category)" data-target="#editCategoryModal" data-toggle="modal"><i class="fa fa-edit btn btn-primary"> </i></td>
+            <td (click)='deleteCategory(category.categoryId)'><i class="fa fa-trash btn btn-danger"> </i></td>
+          </tr>  
+        </tbody>
+    </table>
+      <!-- category modal -->
+      <div class="modal fade" #categoryModal id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="categoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="categoryModalLabel">New Category</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="addCategoryForm" (submit)="addCategory()">
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Category Name</div>
+                    </div>
+                        <!-- <label for="eventName" class="">Event Name :</label> -->
+                      <input type="text" id="categoryName" formControlName="categoryName" class="form-control"/>
+                  </div>
+                  <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Parent Category </div>
+                    </div>
+                    <select class="form-group custom-select" formControlName="parentCategoryId">
+                        <option *ngFor="let cat of categoryList" value="{{cat.categoryId}}">
+                          {{cat.categoryName}}
+                        </option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id='closemodal' class="btn btn-secondary" data-dismiss="modal" (click)="clear()">Close</button>
+                  <button type="submit" class="btn btn-primary" [disabled]="!addCategoryForm.valid">Save changes</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- edit form -->
+      <div class="modal fade" #categoryModal id="editCategoryModal" tabindex="-1" role="dialog" aria-labelledby="categoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="categoryModalLabel">Edit Category</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="editCategoryForm" (submit)="updateCategory($event)">
+                <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Category Name</div>
+                    </div>
+                        <!-- <label for="eventName" class="">Event Name :</label> -->
+                      <input type="text" id="categoryName" formControlName="categoryName" class="form-control"/>
+                  </div>
+                  <div class="form-group col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Parent Category </div>
+                    </div>
+                    <select [(ngModel)]="selectedCat" id="parentCategoryId" class="form-group custom-select" formControlName="parentCategoryId">
+                        <option *ngFor="let cat of categoryList" value="{{cat.categoryId}}">
+                          {{cat.categoryName}}
+                        </option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id='closemodal' class="btn btn-secondary" data-dismiss="modal" (click)="clear()">Close</button>
+                  <button type="submit" class="btn btn-primary" [disabled]="!editCategoryForm.valid">Save changes</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- edit form -->
+</div>

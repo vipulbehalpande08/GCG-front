@@ -1,0 +1,116 @@
+<app-top-header></app-top-header>
+<div class="container-fluid w-100 p-0 " style="margin-top: 50px;">
+    <div class="col-sm-12">
+        <div class="row m-0" id="searchBar">
+          <div class="card w-100">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+               <div id="accordion">
+                <form [formGroup]="searchForm" (submit)="filterEvents()">
+                  <div class="row">
+                    <div class="col-sm-4">  
+                      <label for="eventName">Event Name:</label>
+                    <input class="form-control"  type="text" formControlName="eventName" id="eventName" placeholder="please enter event name">
+                    </div>
+                    <div class="col-sm-4">  
+                      <label for="startDate">Start Date:</label>
+                      <input type="date" formControlName="startDate" id="startDate" class="form-control col">
+                    </div>
+                    <div class="col-sm-4">  
+                      <label for="endDate">End Date:</label>
+                      <input type="date" formControlName="endDate" id="endDate" class="form-control col">
+                    </div>
+                  </div>
+                    <div class=" col-sm-12">
+                      <button type="submit" [disabled]="!searchForm.valid" class="btn btn-primary pull-right m-2">
+                        Search
+                      </button>
+                    </div>
+                </form>
+              </div>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- event card start-->
+            <div class="col-lg-4 col-md-6 col-sm-12 mt-2 d-flex-wrap" *ngFor="let event of eventList">
+              <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="header-image" style="background: url(http://127.0.0.1:8887/uploads/events/{{event.eventId}}/event.jpg);background-size: contain;"></div>
+                  <mat-card-title>{{event.eventName}}        </mat-card-title>
+                  <mat-card-subtitle>{{event.startDate | date: 'mediumDate'}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="http://127.0.0.1:8887/uploads/events/{{event.eventId}}/event.jpg" alt="{{event.eventName}}">
+                <mat-card-content>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      
+                      <!-- <mat-card>
+                        <mat-card-header>
+                          <mat-card-title>Venue</mat-card-title>
+                          <mat-card-subtitle>15 dock street, galway</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-header>
+                          <mat-card-title>Timing</mat-card-title>
+                          <mat-card-subtitle>from {{event.startDate | date: 'mediumTime'}} to {{event.endDate | date: 'mediumTime'}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-header>
+                          <mat-card-title>Artist</mat-card-title>
+                          <mat-card-subtitle>Michelle Doyle</mat-card-subtitle>
+                        </mat-card-header>
+                      </mat-card> -->
+                    </div>
+
+                    
+                  </div>
+                  <div *ngFor="let venue of venueList">
+                    <mat-expansion-panel *ngIf="venue.venueId==event.venueId">
+                      <mat-expansion-panel-header>
+                        Venue
+                      </mat-expansion-panel-header> 
+                      <p class="text-justify">
+                        {{venue.street}}, &ensp;{{venue.city}}, &ensp;{{venue.country}}
+                      </p> 
+                    </mat-expansion-panel>
+                  </div>
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      Timing
+                    </mat-expansion-panel-header> 
+                    <p class="text-justify">
+                      {{event.startDate | date: 'mediumTime' }} - {{event.endDate | date: 'mediumTime' }} 
+                    </p> 
+                  </mat-expansion-panel>
+                  <div *ngFor="let artist of artistList">
+                    <mat-expansion-panel *ngIf="artist.userId==event.artistId">
+                      <mat-expansion-panel-header>
+                        Artist
+                      </mat-expansion-panel-header> 
+                      <p class="text-justify">
+                        {{artist.firstName}}&ensp;{{artist.lastName}}
+                      </p> 
+                    </mat-expansion-panel>
+    
+                  </div>
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      Description
+                    </mat-expansion-panel-header> 
+                    <p class="text-justify">
+                      {{event.description }}
+                    </p> 
+                  </mat-expansion-panel>
+                </mat-card-content>
+                <!-- <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions> -->
+              </mat-card>
+            </div>
+          <!-- event card end -->
+        </div>
+    </div>
+    
+</div>
+<app-footer></app-footer>

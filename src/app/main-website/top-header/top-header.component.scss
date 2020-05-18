@@ -1,0 +1,106 @@
+
+fa{
+    color: black;
+    margin: auto;
+}
+.nav-item a{
+    color:white;
+    // color: black;
+}
+a.nav-link:hover{
+    // background: green;
+    // background: #ffbe30;
+    border-bottom: 2px solid #ff3e00;
+    // background: linear-gradient(to bottom right, #000b18, #0052a2);
+    // color: white!important;
+    
+    
+}
+.events{
+    border-bottom: 2px solid #ffbe30;
+}
+.home{
+    border-bottom: 2px solid #ffbe30;
+//    background: linear-gradient(to bottom right, #000b18, #0052a2);
+//    color: white!important;
+ 
+}
+.gallery{
+    border-bottom: 2px solid #ffbe30;
+}
+.venue-hire{
+    border-bottom: 2px solid #ffbe30;
+}
+.shop{
+    border-bottom: 2px solid #ffbe30;
+}
+
+.about{
+    border-bottom: 2px solid #ffbe30;
+}
+
+nav{
+	z-index: 999;
+
+}
+
+@media only screen and (min-width: 992px){
+.dropdown-menu{
+	margin-left:-50px;
+}
+}
+
+
+// masthead layout
+// Styling for the masthead
+// header.masthead {
+//     text-align: center;
+//     color: white;
+//     // background-color: red;
+//     background-image: url('../../assets//images/background.jpg');
+//     background-repeat: no-repeat;
+//     background-attachment: scroll;
+//     background-position: center center;
+//     background-size: cover;
+//     .intro-text {
+//       padding-top: 150px;
+//       padding-bottom: 100px;
+//       .intro-lead-in {
+//         font-size: 22px;
+//         font-style: italic;
+//         line-height: 22px;
+//         margin-bottom: 25px;
+//         // @include serif-font;
+//       }
+//       .intro-heading {
+//         font-size: 50px;
+//         font-weight: 700;
+//         line-height: 50px;
+//         margin-bottom: 25px;
+//         // @include heading-font;
+//       }
+//     }
+//   }
+//   @media(min-width:768px) {
+//     header.masthead {
+//       .intro-text {
+//         padding-top: 300px;
+//         padding-bottom: 200px;
+//         .intro-lead-in {
+//           font-size: 40px;
+//           font-style: italic;
+//           line-height: 40px;
+//           margin-bottom: 25px;
+//         //   @include serif-font;
+//         }
+//         .intro-heading {
+//           font-size: 75px;
+//           font-weight: 700;
+//           line-height: 75px;
+//           margin-bottom: 50px;
+//         //   @include heading-font;
+//         }
+//       }
+//     }
+//   }
+  
