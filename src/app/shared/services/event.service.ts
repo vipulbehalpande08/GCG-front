@@ -10,7 +10,7 @@ const httpOptions = {
     })};
 @Injectable()
 export class EventService{
-    eventUrl : string = 'http://localhost:8080/api/event/';
+    eventUrl : string = 'http://18.202.20.201:8080/api/event/';
     sanitizer: DomSanitizer;
     constructor(private http: HttpClient, sanitizer: DomSanitizer){
       this.sanitizer = sanitizer;
@@ -18,7 +18,7 @@ export class EventService{
 uploadFile(file : File , eventId : string){
       const data = new FormData();
       data.append('file', file);
-      this.http.post("http://localhost:8080/api/util/uploadFiles/"+eventId, data).subscribe(
+      this.http.post("http://18.202.20.201:8080/api/util/uploadFiles/"+eventId, data).subscribe(
         (data)=>{
          console.log('file uploaded successfully'); 
         });

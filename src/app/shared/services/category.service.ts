@@ -10,7 +10,7 @@ const httpOptions = {
     })};
 @Injectable()
 export class CategoryService{
-    categoryUrl : string = 'http://localhost:8080/api/category/';
+    categoryUrl : string = 'http://18.202.20.201:8080/api/category/';
    
     constructor(private http : HttpClient){   
         

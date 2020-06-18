@@ -11,7 +11,7 @@ export class ProductService{
     productUrl :string;
     productList: Product[]=[];
     constructor(private http: HttpClient){
-        this.productUrl = 'http://localhost:8080/api/product/';
+        this.productUrl = 'http://18.202.20.201:8080/api/product/';
     }
     
     addProduct(product: Product){

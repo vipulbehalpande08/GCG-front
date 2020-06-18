@@ -37,11 +37,11 @@
             <div class="col-lg-4 col-md-6 col-sm-12 mt-2 d-flex-wrap" *ngFor="let event of eventList">
               <mat-card class="example-card">
                 <mat-card-header>
-                    <div mat-card-avatar class="header-image" style="background: url(http://127.0.0.1:8887/uploads/events/{{event.eventId}}/event.jpg);background-size: contain;"></div>
+                    <div mat-card-avatar class="header-image" style="background: url(http://18.202.20.201/uploads/events/{{event.eventId}}/event.jpg);background-size: contain;"></div>
                   <mat-card-title>{{event.eventName}}        </mat-card-title>
                   <mat-card-subtitle>{{event.startDate | date: 'mediumDate'}}</mat-card-subtitle>
                 </mat-card-header>
-                <img mat-card-image src="http://127.0.0.1:8887/uploads/events/{{event.eventId}}/event.jpg" alt="{{event.eventName}}">
+                <img mat-card-image src="http://18.202.20.201/uploads/events/{{event.eventId}}/event.jpg" alt="{{event.eventName}}">
                 <mat-card-content>
                   <div class="row">
                     <div class="col-sm-12">

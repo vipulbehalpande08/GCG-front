@@ -13,7 +13,7 @@ export class VenueService{
     venueUrl : string;
     venueList : Venue[];
     constructor(private http : HttpClient){
-        this.venueUrl="http://localhost:8080/api/venue";
+        this.venueUrl="http://18.202.20.201:8080/api/venue";
         this.venueList = [];
     }
     addVenue(venue : Venue){

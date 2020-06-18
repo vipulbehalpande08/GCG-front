@@ -1,0 +1,318 @@
+WARNING: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues. You might need to use "--disableHostCheck" if that's the
+case.
+[HPM] Proxy created: /api/  ->  http://172.26.0.59:8080
+[HPM] Subscribed to http-proxy events:  [ 'error', 'close' ]
+
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 140 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {scripts} scripts.js, scripts.js.map (scripts) 146 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 1.62 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 6.65 MB [initial] [rendered]
+Date: 2020-06-14T16:08:32.769Z - Hash: 3ce307c999d3ed287cb5 - Time: 42341ms
+** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
+: Compiled successfully.
+WARNING: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues. You might need to use "--disableHostCheck" if that's the
+case.
+[HPM] Proxy created: /api/  ->  http://172.26.0.59:8080
+[HPM] Subscribed to http-proxy events:  [ 'error', 'close' ]
+
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 140 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {scripts} scripts.js, scripts.js.map (scripts) 146 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 1.62 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 6.65 MB [initial] [rendered]
+Date: 2020-06-14T16:41:51.457Z - Hash: 3ce307c999d3ed287cb5 - Time: 41195ms
+** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
+: Compiled successfully.
+An unhandled exception occurred: Port 4200 is already in use. Use '--port' to specify a different port.
+See "/tmp/ng-EcUkCm/angular-errors.log" for further details.
+WARNING: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues. You might need to use "--disableHostCheck" if that's the
+case.
+[HPM] Proxy created: /api/  ->  http://172.26.0.59:8080
+[HPM] Subscribed to http-proxy events:  [ 'error', 'close' ]
+
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 140 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {scripts} scripts.js, scripts.js.map (scripts) 146 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 1.62 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 6.65 MB [initial] [rendered]
+Date: 2020-06-14T17:25:45.127Z - Hash: f0a6a0a7333febd6ab3e - Time: 41553ms
+** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
+: Compiled successfully.
+
+Date: 2020-06-14T17:27:48.837Z - Hash: e5ddb8acf9328782f82b
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 11049ms
+: Compiled successfully.
+An unhandled exception occurred: Port 4200 is already in use. Use '--port' to specify a different port.
+See "/tmp/ng-Dw6Uod/angular-errors.log" for further details.
+WARNING: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues. You might need to use "--disableHostCheck" if that's the
+case.
+[HPM] Proxy created: /api/  ->  http://172.26.0.59:8080
+[HPM] Subscribed to http-proxy events:  [ 'error', 'close' ]
+
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 140 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {scripts} scripts.js, scripts.js.map (scripts) 146 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 1.62 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 6.65 MB [initial] [rendered]
+Date: 2020-06-14T17:29:59.108Z - Hash: e5ddb8acf9328782f82b - Time: 42638ms
+** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
+: Compiled successfully.
+
+Date: 2020-06-14T17:31:49.596Z - Hash: bd8dad31e2b85ffa087a
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 11129ms
+: Compiled successfully.
+WARNING: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues. You might need to use "--disableHostCheck" if that's the
+case.
+[HPM] Proxy created: /api/  ->  http://172.26.0.59:8080
+[HPM] Subscribed to http-proxy events:  [ 'error', 'close' ]
+
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 140 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {scripts} scripts.js, scripts.js.map (scripts) 146 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 1.62 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 6.65 MB [initial] [rendered]
+Date: 2020-06-14T17:33:03.402Z - Hash: bd8dad31e2b85ffa087a - Time: 42915ms
+** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
+: Compiled successfully.
+
+Date: 2020-06-14T17:49:06.547Z - Hash: 3187e611aa7ed3eb5158
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 11650ms
+: Compiled successfully.
+
+Date: 2020-06-14T17:49:29.891Z - Hash: d5e7093353d69cea5ba0
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 7544ms
+: Compiled successfully.
+
+Date: 2020-06-14T17:49:53.975Z - Hash: dc3a5ede60ab2a1429f3
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 5344ms
+: Compiled successfully.
+
+Date: 2020-06-14T17:50:27.119Z - Hash: 057ca685215c0bc4b8b6
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 5970ms
+: Compiled successfully.
+WARNING: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues. You might need to use "--disableHostCheck" if that's the
+case.
+[HPM] Proxy created: /api/  ->  http://172.26.0.59:8080
+[HPM] Subscribed to http-proxy events:  [ 'error', 'close' ]
+
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 140 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {scripts} scripts.js, scripts.js.map (scripts) 146 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 1.62 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 6.65 MB [initial] [rendered]
+Date: 2020-06-14T17:53:55.991Z - Hash: 057ca685215c0bc4b8b6 - Time: 44305ms
+** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
+: Compiled successfully.
+
+Date: 2020-06-17T13:59:59.188Z - Hash: 44ddcbf5049d071895ce
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 10902ms
+: Compiled successfully.
+WARNING: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues. You might need to use "--disableHostCheck" if that's the
+case.
+[HPM] Proxy created: /api/  ->  http://172.26.0.59:8080
+[HPM] Subscribed to http-proxy events:  [ 'error', 'close' ]
+
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 140 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {scripts} scripts.js, scripts.js.map (scripts) 146 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 1.62 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 6.65 MB [initial] [rendered]
+Date: 2020-06-17T14:02:04.690Z - Hash: 44ddcbf5049d071895ce - Time: 43671ms
+** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
+: Compiled successfully.
+
+Date: 2020-06-17T14:17:03.008Z - Hash: 7ec3570cb00adecaad0a
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 10837ms
+: Compiled successfully.
+WARNING: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues. You might need to use "--disableHostCheck" if that's the
+case.
+[HPM] Proxy created: /api/  ->  http://172.26.0.59:8080
+[HPM] Subscribed to http-proxy events:  [ 'error', 'close' ]
+
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 140 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {scripts} scripts.js, scripts.js.map (scripts) 146 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 1.62 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 6.65 MB [initial] [rendered]
+Date: 2020-06-17T14:18:38.031Z - Hash: 7ec3570cb00adecaad0a - Time: 42777ms
+** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
+: Compiled successfully.
+WARNING: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues. You might need to use "--disableHostCheck" if that's the
+case.
+[HPM] Proxy created: /api/  ->  http://172.26.0.59:8080
+[HPM] Subscribed to http-proxy events:  [ 'error', 'close' ]
+
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 140 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {scripts} scripts.js, scripts.js.map (scripts) 146 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 1.62 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 6.65 MB [initial] [rendered]
+Date: 2020-06-17T14:21:09.944Z - Hash: 7ec3570cb00adecaad0a - Time: 41542ms
+** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
+: Compiled successfully.
+
+Date: 2020-06-17T14:22:09.658Z - Hash: 180b1c5e2ec20f93c4bc
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 9809ms
+: Compiled successfully.
+
+Date: 2020-06-17T14:23:39.729Z - Hash: e494be76d31167e5723e
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 7764ms
+: Compiled successfully.
+
+Date: 2020-06-17T14:24:47.876Z - Hash: 5a987a34d9a104485782
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 6270ms
+: Compiled successfully.
+
+Date: 2020-06-17T14:25:47.392Z - Hash: a2e4630af16aa3ec079b
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 6125ms
+: Compiled successfully.
+
+Date: 2020-06-17T14:27:06.722Z - Hash: c16f27e4e46227085eba
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 6715ms
+: Compiled successfully.
+WARNING: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues. You might need to use "--disableHostCheck" if that's the
+case.
+[HPM] Proxy created: /api/  ->  http://172.26.0.59:8080
+[HPM] Subscribed to http-proxy events:  [ 'error', 'close' ]
+
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 140 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {scripts} scripts.js, scripts.js.map (scripts) 146 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 1.62 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 6.65 MB [initial] [rendered]
+Date: 2020-06-17T14:28:06.193Z - Hash: c16f27e4e46227085eba - Time: 44262ms
+** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
+: Compiled successfully.
+
+Date: 2020-06-17T16:03:35.064Z - Hash: b8105dfaa428919468bd
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 11130ms
+: Compiled successfully.
+WARNING: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues. You might need to use "--disableHostCheck" if that's the
+case.
+[HPM] Proxy created: /api/  ->  http://172.26.0.59:8080
+[HPM] Subscribed to http-proxy events:  [ 'error', 'close' ]
+
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 140 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {scripts} scripts.js, scripts.js.map (scripts) 146 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 1.62 MB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 6.65 MB [initial] [rendered]
+Date: 2020-06-17T16:05:02.735Z - Hash: b8105dfaa428919468bd - Time: 42731ms
+** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
+: Compiled successfully.
+
+Date: 2020-06-17T16:10:30.058Z - Hash: 8e381bc988bc80a1aaf9
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 10848ms
+: Compiled successfully.
+
+Date: 2020-06-17T16:13:36.531Z - Hash: b9625dca353adaad1801
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.93 MB [initial] [rendered]
+Time: 7910ms
+: Compiled successfully.
+
+Date: 2020-06-17T16:21:29.958Z - Hash: 1f27c2a59b63aeafaa25
+6 unchanged chunks
+
+Time: 6262ms
+
+WARNING in Emitted no files.
+
+: Compiled successfully.

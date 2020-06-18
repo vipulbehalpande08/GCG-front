@@ -24,7 +24,7 @@
         <ul class="timeline">
           <li *ngFor="let event of eventList |slice:0:3; index as i" [ngClass]="{'timeline-inverted': i%2!=0}"> 
             <div class="timeline-image" style="overflow: hidden;"> 
-              <img class="rounded-circle img-fluid" src="http://127.0.0.1:8887/uploads/events/{{event.eventId}}/event.jpg" alt="" >
+              <img class="rounded-circle img-fluid" src="http://18.202.20.201/uploads/events/{{event.eventId}}/event.jpg" alt="" >
             </div>
             <div class="timeline-panel">
               <div class="timeline-heading">
@@ -56,7 +56,7 @@
     <div #carousel class="carousel" >
 
       <!-- <div class="carousel__cell" id='caros'>1</div> -->
-      <div class="carousel__cell" id='caros' *ngFor="let event of eventList" style="background:url(http://127.0.0.1:8887/uploads/events/{{event.eventId}}/event.jpg); background-size: contain;"></div>
+      <div class="carousel__cell" id='caros' *ngFor="let event of eventList" style="background:url(http://18.202.20.201/uploads/events/{{event.eventId}}/event.jpg); background-size: contain;"></div>
     </div>
   </div>
   

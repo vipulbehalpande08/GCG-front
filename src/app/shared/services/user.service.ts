@@ -12,7 +12,7 @@ export class UserService{
     userUrl : string;
     userList : User[];
     constructor(private http: HttpClient){
-        this.userUrl ='http://localhost:8080/api/user/';
+        this.userUrl ='http://18.202.20.201:8080/api/user/';
         this.userList = [];
     }
     updateUser(user: User){
