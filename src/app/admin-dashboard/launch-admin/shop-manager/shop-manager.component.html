@@ -26,7 +26,7 @@
             <td>{{product.availableStock}}</td>
             <td>{{product.categoryId}}</td>
             <!-- <td style="text-align: justify;">{{event.description | slice:0:150}}...</td> -->
-            <td ><i class="fa fa-edit btn btn-primary"> </i></td>
+            <td (click)='showContent(product)' data-toggle="modal" data-target="#editProductModal"><i class="fa fa-edit btn btn-primary"> </i></td>
             <td (click)="deleteProduct(product.productId)"><i class="fa fa-trash btn btn-danger"> </i></td>
         </tr>
         </tbody>
@@ -43,6 +43,83 @@
             </div>
             <div class="modal-body">
                 <form [formGroup]="addProductForm" (submit)="addProduct()">
+                    <div class="form-group col input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Product Name</div>
+                        </div>
+                            <!-- <label for="eventName" class="">Event Name :</label> -->
+                        <input type="text" id="productName" formControlName="productName" class="form-control"/>
+                    </div>
+                    <div class="form-group col input-group">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text">Upload Image</div>
+                      </div>
+                      <input type="file" id="imageUpload" formControlName="imageUpload" (change)="onFileSelected($event)" class="form-control"/>
+                  </div>
+                    <div class="form-group col input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Description</div>
+                        </div>
+                            <!-- <label for="eventName" class="">Event Name :</label> -->
+                        <textarea id="description" formControlName="description" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group col input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Price</div>
+                        </div>
+                            <!-- <label for="eventName" class="">Event Name :</label> -->
+                        <input type="number" min="0" step="0.01" id="price" formControlName="price" class="form-control"/>
+                    </div>
+                    <div class="form-group col input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Stock</div>
+                        </div>
+                            <!-- <label for="eventName" class="">Event Name :</label> -->
+                        <input type="number" id="stock" formControlName="stock" class="form-control"/>
+                    </div>
+                    <div class="form-group col input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Category </div>
+                        </div>
+                        <select class="form-group custom-select" formControlName="categoryId">
+                          <option >Please select category</option>  
+                          <option *ngFor="let category of categoryList" value="{{category.categoryId}}">{{category.categoryName}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col input-group">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text">Owner </div>
+                      </div>
+                      <select class="form-group custom-select" formControlName="ownerId">
+                          <option >Please select a user</option>
+                          <option *ngFor="let user of userList" value="{{user.userId}}">{{user.firstName}}&nbsp;{{user.lastName}}</option>
+                          <!-- <option value="3">Vipul 2</option> -->
+                      </select>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary" [disabled]="!addProductForm.valid">Save changes</button>
+                    </div>
+                </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <!-- product modal end -->
+
+      <!-- product edit modal start-->
+      <div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="productModalLabel">Edit Product</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="editProductForm" (submit)="addProduct()">
                     <div class="form-group col input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">Product Name</div>
@@ -106,5 +183,5 @@
           </div>
         </div>
       </div>
-      <!-- product modal end -->
+      <!-- product edit modal end -->
 </div>

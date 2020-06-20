@@ -6,6 +6,7 @@ import { User } from 'src/app/shared/models/user.model';
 import { Category } from 'src/app/shared/models/category.model';
 import { Product } from 'src/app/shared/models/product.model';
 import { ProductService } from 'src/app/shared/services/product.service';
+import { Event } from '@angular/router';
 
 @Component({
   selector: 'app-shop-manager',
@@ -14,6 +15,7 @@ import { ProductService } from 'src/app/shared/services/product.service';
 })
 export class ShopManagerComponent implements OnInit {
   addProductForm : FormGroup;
+  editProductForm : FormGroup;
   selectedFile : File;
   userList : User[] = [];
   categoryList : Category[]=[];
@@ -22,7 +24,7 @@ export class ShopManagerComponent implements OnInit {
   constructor(fb : FormBuilder,
     private userService : UserService, private categoryService : CategoryService,
     private productService : ProductService) {
-    this.addProductForm = fb.group({
+    this.addProductForm = this.editProductForm = fb.group({
       productName : ['', Validators.required],
       description : ['', Validators.required],
       price : ['', Validators.required],
@@ -70,7 +72,7 @@ export class ShopManagerComponent implements OnInit {
   }
   uploadFile(productId : number,file : File){
     this.productService.uploadFile(productId,file).subscribe((data)=>{
-      
+      alert("image uploaded successfully");
     },(err)=>{alert('Something went wrong while uploading product image')}); 
     //this.clear();
   }
@@ -85,5 +87,9 @@ export class ShopManagerComponent implements OnInit {
     }, (err)=>{alert('Server error')});
     this.productList = [];
     this.productList = this.productService.getAllProduct();
+  }
+
+  showContent(product : Product){
+    console.log(product);
   }
 }
