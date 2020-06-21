@@ -34,7 +34,7 @@ const routes: Routes = [
   {path:'event-list', component:EventlistComponent},
   {path:'event-details', component: ExhibitionDetailsComponent},
  { path:'home', pathMatch:'full', component: HomeComponent},
-  { path:'*/', pathMatch:'full', component: HomeComponent},
+  { path:'*/*', component: HomeComponent},
  { path:'gallery', component: GalleryComponent},
  { path:'venue-hire', component: VenueComponent},
  { path:'shop', component: ShopComponent},

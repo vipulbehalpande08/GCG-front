@@ -31,7 +31,7 @@ export class ShopManagerComponent implements OnInit {
       stock :['', Validators.required],
       categoryId : ['', Validators.required],
       ownerId :['', Validators.required],
-      imageUpload:['', Validators.required]
+      imageUpload:['']
     })
    }
 
@@ -90,6 +90,22 @@ export class ShopManagerComponent implements OnInit {
   }
 
   showContent(product : Product){
-    console.log(product);
+    this.productIdForUpdate = product._productId;
+    this.editProductForm.controls['productName'].setValue(product._productName);
+    this.editProductForm.controls['description'].setValue(product._description);
+    this.editProductForm.controls['stock'].setValue(product._availablestock);
+    this.editProductForm.controls['categoryId'].setValue(product._categoryId);
+    this.editProductForm.controls['price'].setValue(product._price);
+    this.editProductForm.controls['ownerId'].setValue(product._ownerId);
+  }
+  editProduct(updatedData){
+    let product = new Product(this.productIdForUpdate, updatedData.target.elements['productName'].value,
+   updatedData.target.elements['description'].value, updatedData.target.elements['price'].value,
+   updatedData.target.elements['stock'].value, updatedData.target.elements['ownerId'].value,
+   updatedData.target.elements['categoryId'].value );
+   console.log("product : ", product);
+   this.productService.updateProduct(product).subscribe((data)=>{
+     alert("Product details has been updated");
+   }, (err)=>{alert("Something went wrong while updating product details")}); 
   }
 }

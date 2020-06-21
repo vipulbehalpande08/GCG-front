@@ -22,6 +22,9 @@ export class ProductService{
         data.append('file', file);
         return this.http.post(this.productUrl+'uploadFile/'+productId, data);
     }
+    updateProduct(product: Product){
+        return this.http.post(this.productUrl+'update', product, httpOptions);
+    }
     deleleById(productId : number){
         return this.http.delete(this.productUrl+'remove/'+productId);
     }
