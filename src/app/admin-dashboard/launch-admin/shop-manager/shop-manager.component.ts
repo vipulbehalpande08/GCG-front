@@ -106,6 +106,8 @@ export class ShopManagerComponent implements OnInit {
    console.log("product : ", product);
    this.productService.updateProduct(product).subscribe((data)=>{
      alert("Product details has been updated");
+     document.getElementById('editProductModal').click();
+      this.editProductForm.reset();
    }, (err)=>{alert("Something went wrong while updating product details")}); 
   }
 }
